@@ -112,7 +112,7 @@ function MusicGenerator({
       />
 
        
-      <label>Lyrics</label>
+      <label htmlFor="lyrics">Lyrics</label>
       <div>
       <textarea
         placeholder="Enter Lyrics or Generate..."
