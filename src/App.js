@@ -102,8 +102,9 @@ function MusicGenerator({
   return (
     <div className="music-generator">
       <h2>Music Generator</h2>
-      <label>Song Title</label>
+      <label htmlFor="songtitle">Song Title</label>
       <input
+        id="songtitle"
         type="text"
         placeholder="Enter Song Title"
         className="transparent-input1"
@@ -115,6 +116,7 @@ function MusicGenerator({
       <label htmlFor="lyrics">Lyrics</label>
       <div>
       <textarea
+        id="lyrics"
         placeholder="Enter Lyrics or Generate..."
         className="transparent-input"
         value={lyrics}
@@ -125,13 +127,15 @@ function MusicGenerator({
         Generate Lyrics
       </button>
 
-      <label>Choose an option:</label>
-       <div className="sel">
-        <div className="sel1">
-       <p onClick={() => setChooseanoption("Vocal")}>Vocal</p></div>
-       <div className="sel1"><p onClick={() => setChooseanoption("Instrument")}>Instrument</p></div>
-       </div>
+<div className="sel1">
+      <label htmlFor="option" className="sel">Choose an option: </label>
+<select id="option" onChange={(e) => setChooseanoption(e.target.value)}>
+  <option value="Vocal">Vocal</option>
+  <option value="Instrument">Instrument</option>
+</select>
+</div>
 
+<br></br>
 
       <label>Genre</label>
       <div className="genre">
@@ -479,9 +483,10 @@ function MusicGenerator({
 
 
 
-      <label>Tempo</label>
+      <label htmlFor="tempo-slider">Tempo</label>
       <div className="tempo">
         <input
+          id="tempo-slider"
           type="range"
           min="0"
           max="100"
